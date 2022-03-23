@@ -2,21 +2,16 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int calcSum(int[] sales) {
-        int sum = 0;
-        for (int sale : sales) {
+    public long calcSum(long[] sales) {
+        long sum = 0;
+        for (long sale : sales) {
             sum += sale;
         }
         return sum;
     }
 
-    public int calcMidSum(int[] sales) {
-        int sum = 0;
-        for (int sale : sales) {
-            sum += sale;
-        }
-        sum /= sales.length;
-        return sum;
+    public long calcMidSum(long[] sales) {
+        return calcSum(sales) / sales.length;
     }
 
     public int maxSales(long[] sales) {
@@ -48,18 +43,10 @@ public class StatsService {
     }
 
     public int monLessMidSales(long[] sales) {
-        int sum = 0;
-        for (long sale : sales) {
-            // sales[minMonth] - продажи в месяце minMonth
-            // sale - продажи в рассматриваемом месяце
-            sum += sale;
-        }
-        sum /= sales.length;
-
         int minMonth = 0;
         int count = 0;
         for (long sale : sales) {
-            if (sale < sum) {
+            if (sale < calcSum(sales) / sales.length) {
                 count++;
             }
         }
@@ -67,18 +54,10 @@ public class StatsService {
     }
 
     public int monMoreMidSales(long[] sales) {
-        int sum = 0;
-        for (long sale : sales) {
-            // sales[minMonth] - продажи в месяце minMonth
-            // sale - продажи в рассматриваемом месяце
-            sum += sale;
-        }
-        sum /= sales.length;
-
         int minMonth = 0;
         int count = 0;
         for (long sale : sales) {
-            if (sale > sum) {
+            if (sale > calcSum(sales) / sales.length) {
                 count++;
             }
         }

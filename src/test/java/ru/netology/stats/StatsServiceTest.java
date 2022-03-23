@@ -9,9 +9,9 @@ class StatsServiceTest {
     @Test
     void shouldCalcSum() {
         StatsService service = new StatsService();
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 180;
-        int actual = service.calcSum(managerSales);
+        long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 180;
+        long actual = service.calcSum(managerSales);
 
         assertEquals(expected, actual);
     }
@@ -19,9 +19,9 @@ class StatsServiceTest {
     @Test
     void shouldCalcMidSum() {
         StatsService service = new StatsService();
-        int[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 15;
-        int actual = service.calcMidSum(managerSales);
+        long[] managerSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 15;
+        long actual = service.calcMidSum(managerSales);
 
         assertEquals(expected, actual);
     }
