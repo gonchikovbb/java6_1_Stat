@@ -46,7 +46,7 @@ public class StatsService {
         int minMonth = 0;
         int count = 0;
         for (long sale : sales) {
-            if (sale < calcSum(sales) / sales.length) {
+            if (sale < calcMidSum(sales)) {
                 count++;
             }
         }
@@ -57,7 +57,7 @@ public class StatsService {
         int minMonth = 0;
         int count = 0;
         for (long sale : sales) {
-            if (sale > calcSum(sales) / sales.length) {
+            if (sale > calcMidSum(sales)) {
                 count++;
             }
         }
