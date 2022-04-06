@@ -43,10 +43,10 @@ public class StatsService {
     }
 
     public int monLessMidSales(long[] sales) {
-        int minMonth = 0;
         int count = 0;
+        long midSum = calcMidSum(sales);
         for (long sale : sales) {
-            if (sale < calcMidSum(sales)) {
+            if (sale < midSum) {
                 count++;
             }
         }
@@ -54,10 +54,10 @@ public class StatsService {
     }
 
     public int monMoreMidSales(long[] sales) {
-        int minMonth = 0;
         int count = 0;
+        long midSum = calcMidSum(sales);
         for (long sale : sales) {
-            if (sale > calcMidSum(sales)) {
+            if (sale > midSum) {
                 count++;
             }
         }
